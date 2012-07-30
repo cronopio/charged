@@ -11,5 +11,8 @@
   "tags": [ "chargify", "charge" ],
   "dependencies": {
     "request": ">= 2.9.0"
+  },
+  "scripts": {
+    "test": "vows test/**-test.js --spec --isolate"
   }
 }

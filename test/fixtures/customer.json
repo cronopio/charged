@@ -1,0 +1,19 @@
+{
+  "customer": {
+    "state":null,
+    "phone":null,
+    "country":null,
+    "reference":null,
+    "last_name":"Doe",
+    "city":null,
+    "zip":null,
+    "first_name":"Jhon",
+    "address_2":null,
+    "address":null,
+    "id":1997989,
+    "organization":null,
+    "email":"jdoe@test.com",
+    "updated_at":"2012-07-18T11:21:47-04:00",
+    "created_at":"2012-07-18T11:21:47-04:00"
+  }
+}

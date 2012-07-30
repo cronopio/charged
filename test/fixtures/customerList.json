@@ -1,0 +1,40 @@
+[
+  {
+    "customer": {
+      "email":"test@test.com",
+      "address_2":"",
+      "phone":"",
+      "created_at":"2012-07-18T10:58:21-04:00",
+      "city":"",
+      "address":"",
+      "zip":"",
+      "last_name":"Pablo",
+      "updated_at":"2012-07-18T10:58:21-04:00",
+      "country":"",
+      "organization":"",
+      "state":"",
+      "first_name":"Pedro",
+      "reference":null,
+      "id":1997915
+    }
+  },
+  {
+    "customer": {
+      "email":"juan@test.com",
+      "address_2":"",
+      "phone":"",
+      "created_at":"2012-07-18T10:58:37-04:00",
+      "city":"",
+      "address":"",
+      "zip":"",
+      "last_name":"Perez",
+      "updated_at":"2012-07-18T10:58:37-04:00",
+      "country":"",
+      "organization":"",
+      "state":"",
+      "first_name":"Juan",
+      "reference":null,
+      "id":1997916
+    }
+  }
+]
