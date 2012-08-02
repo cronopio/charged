@@ -12,7 +12,7 @@ var vows    = require('vows'),
     helpers = require('./helpers'),
     Charged = require('../');
     
-nock.recorder.rec();
+//nock.recorder.rec();
 
 nock('https://test-sandbox.chargify.com:443')
   .get('/customers.json')
@@ -25,9 +25,18 @@ nock('https://test-sandbox.chargify.com:443')
 nock('https://test-sandbox.chargify.com:443')
   .get('/customers/1997989.json')
     .reply(200, helpers.loadFixture('customer.json'), helpers.headersChargify);
+
 nock('https://test-sandbox.chargify.com:443')
   .get('/customers/1997989.json')
     .reply(200, helpers.loadFixture('customer.json'), helpers.headersChargify);
+
+nock('https://test-sandbox.chargify.com:443')
+  .put('/customers/1997989.json', "{\"customer\":{\"last_name\":\"Perez\",\"email\":\"jperez@test.com\"}}")
+    .reply(200, helpers.loadFixture('updatedCustomer.json'), helpers.headersChargify);
+
+nock('https://test-sandbox.chargify.com:443')
+  .put('/customers/1997989.json', "{\"customer\":{\"first_name\":\"Juan\"}}")
+    .reply(200, helpers.loadFixture('updatedCustomer2.json'), helpers.headersChargify);
 
 var charge = new Charged({
   product: 'test-sandbox',
@@ -77,7 +86,7 @@ vows.describe('Charged initial tests').addBatch({
 }).addBatch({
   "Charged instance": {
     "the getCustomer() method": {
-      topic: function (){
+      topic: function () {
         charge.getCustomer(testContext.customer.id, this.callback);
       },
       "should respond with the customer": assertCustomer
@@ -87,6 +96,47 @@ vows.describe('Charged initial tests').addBatch({
         charge.getCustomerById(testContext.customer.id, this.callback);
       },
       "should respond with the customer": assertCustomer
+    },
+    //
+    // Always get 404 using any reference :(
+    //
+    //"the getCustomerByRef() method (will be deprecated by chargify anytime)": {
+    //  topic: function () {
+    //    charge.getCustomerByRef('jdoe@test.com', this.callback);
+    //  },
+    //  "should respond with the customer": assertCustomer
+    //}
+  }
+}).addBatch({
+  "Charged instance": {
+    "the updateCustomer() method": {
+      topic: function () {
+        charge.updateCustomer(testContext.customer.id, {
+          last_name: 'Perez',
+          email: 'jperez@test.com'
+        }, this.callback);
+      },
+      "should respond with a valid customer": assertCustomer,
+      "should respond with the updated customer": function (err, customer) {
+        assert.isNull(err);
+        assert.ok(customer);
+        assert.equal(customer.first_name, 'Jhon');
+        assert.equal(customer.last_name, 'Perez');
+        assert.equal(customer.email, 'jperez@test.com');
+      }
+    },
+    "the updateCustomerById() method": {
+      topic: function () {
+        charge.updateCustomerById(testContext.customer.id, {
+          first_name: 'Juan'
+        }, this.callback);
+      },
+      "should respond with a valid customer": assertCustomer,
+      "should respond with the updated customer": function (err, customer) {
+        assert.isNull(err);
+        assert.ok(customer);
+        assert.equal(customer.first_name, 'Juan');
+      }
     }
   }
 }).export(module)

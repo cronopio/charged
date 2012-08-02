@@ -1,0 +1,19 @@
+{
+  "customer":{
+    "zip":null,
+    "country":null,
+    "city":null,
+    "organization":null,
+    "id":1997989,
+    "email":"jperez@test.com",
+    "updated_at":"2012-08-02T17:52:56-04:00",
+    "last_name":"Perez",
+    "first_name":"Jhon",
+    "address_2":null,
+    "phone":null,
+    "created_at":"2012-07-18T11:21:47-04:00",
+    "state":null,
+    "reference":null,
+    "address":null
+  }
+}
