@@ -1,0 +1,35 @@
+[
+  {
+    "product":{
+      "description":"This product belong to OneProduct family",
+      "handle":"productononeprodcutfamily",
+      "name":"ProductOnOneProdcutFamily",
+      "id":1891978,
+      "product_family":{
+        "description":"This product is one test product",
+        "handle":"oneproduct",
+        "name":"OneProduct",
+        "id":206029,
+        "accounting_code":null
+      },
+      "update_return_url":"",
+      "price_in_cents":100,
+      "interval":1,
+      "trial_price_in_cents":null,
+      "expiration_interval_unit":"never",
+      "expiration_interval":null,
+      "return_url":"",
+      "interval_unit":"month",
+      "return_params":"",
+      "accounting_code":"",
+      "trial_interval":null,
+      "created_at":"2012-07-18T11:25:33-04:00",
+      "require_credit_card":true,
+      "initial_charge_in_cents":null,
+      "updated_at":"2012-07-18T11:25:33-04:00",
+      "trial_interval_unit":"month",
+      "request_credit_card":true,
+      "archived_at":null
+    }
+  }
+]

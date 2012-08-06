@@ -1,0 +1,15 @@
+[
+  {
+    "component":{
+      "kind":"on_off_component",
+      "price_per_unit_in_cents":null,
+      "name":"SSL Support",
+      "id":12059,
+      "archived":false,
+      "unit_price":10.0,
+      "product_family_id":206029,
+      "pricing_scheme":null,
+      "unit_name":"on/off"
+    }
+  }
+]
