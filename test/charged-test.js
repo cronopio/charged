@@ -11,8 +11,6 @@ var vows    = require('vows'),
     assert  = require('assert'),
     helpers = require('./helpers'),
     Charged = require('../');
-    
-//nock.recorder.rec();
 
 nock('https://test-sandbox.chargify.com:443')
   .get('/customers.json')
